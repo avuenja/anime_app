@@ -1,16 +1,11 @@
 # anime_app
 
-A new Flutter project.
+Anime App made with Flutter
 
-## Getting Started
+## Explaining the app
 
-This project is a starting point for a Flutter application.
+The Anime App was created just to train my skills in Flutter, creating a custom App Bar and a Carousel widget.
 
-A few resources to get you started if this is your first Flutter project:
+<img height="480px" src="https://user-images.githubusercontent.com/5226773/74993464-d7416180-5429-11ea-9a5c-06201ab2df6a.png">
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Design inspired by [**Mehdi Trahimi**](https://dribbble.com/shots/6537538-Anime-App-UI?utm_source=Clipboard_Shot&utm_campaign=mehdi7&utm_content=Anime%20App%20UI&utm_medium=Social_Share)
