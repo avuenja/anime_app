@@ -1,3 +1,5 @@
+import 'package:anime_app/src/utils/nav.dart';
+import 'package:anime_app/src/views/detail.dart';
 import 'package:flutter/material.dart';
 
 class Carousel extends StatelessWidget {
@@ -28,23 +30,28 @@ class Carousel extends StatelessWidget {
               alignment: AlignmentDirectional.bottomStart,
               overflow: Overflow.clip,
               children: <Widget>[
-                Container(
-                  margin: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 3,
-                        offset: Offset(0, 5),
-                      ),
-                    ],
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(
-                        index % 2 == 0
-                            ? 'https://cdn-eu.anidb.net/images/main/234328.jpg'
-                            : 'https://cdn-eu.anidb.net/images/main/224521.jpg',
+                InkWell(
+                  onTap: () {
+                    push(context, DetailView());
+                  },
+                  child: Container(
+                    margin: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 3,
+                          offset: Offset(0, 5),
+                        ),
+                      ],
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                          index % 2 == 0
+                              ? 'https://cdn-eu.anidb.net/images/main/234328.jpg'
+                              : 'https://cdn-eu.anidb.net/images/main/224521.jpg',
+                        ),
                       ),
                     ),
                   ),
@@ -62,7 +69,7 @@ class Carousel extends StatelessWidget {
                     ),
                     shape: new CircleBorder(),
                     elevation: 0,
-                    fillColor: Color.fromRGBO(0, 0, 0, 0.4),
+                    fillColor: Color.fromRGBO(0, 0, 0, 0.6),
                     padding: const EdgeInsets.all(8),
                   ),
                 ),

@@ -1,3 +1,4 @@
+import 'package:anime_app/src/widgets/badge.dart';
 import 'package:flutter/material.dart';
 
 class CustomList extends StatelessWidget {
@@ -79,25 +80,10 @@ class CustomList extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                                vertical: 3,
-                              ),
-                              margin: const EdgeInsets.only(
-                                bottom: 10,
-                              ),
-                              decoration: BoxDecoration(
-                                color:
-                                    index % 2 == 0 ? Colors.red : Colors.purple,
-                                borderRadius: BorderRadius.circular(16.0),
-                              ),
-                              child: Text(
-                                index % 2 == 0 ? 'TV Series' : 'Movie',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
+                            Badge(
+                              color:
+                                  index % 2 == 0 ? Colors.red : Colors.purple,
+                              text: index % 2 == 0 ? 'TV Series' : 'Movie',
                             ),
                             Container(
                               width: 265,

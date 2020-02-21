@@ -1,9 +1,11 @@
+import 'package:anime_app/src/utils/nav.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
+  final bool isBack;
 
-  const CustomAppBar({this.title});
+  const CustomAppBar({this.title = '', this.isBack = false});
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +16,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          InkWell(
-            onTap: () {
-              print('action click');
-            },
-            child: Icon(Icons.search),
-          ),
+          this.isBack
+              ? InkWell(
+                  onTap: () {
+                    pop(context);
+                  },
+                  child: Icon(Icons.arrow_back_ios),
+                )
+              : InkWell(
+                  onTap: () {
+                    print('action click');
+                  },
+                  child: Icon(Icons.search),
+                ),
           Text(
             this.title,
             style: TextStyle(
