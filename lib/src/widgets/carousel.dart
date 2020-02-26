@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 
 class Carousel extends StatelessWidget {
   final List<dynamic> items;
+  final PageController pageController;
+  final int currentPage;
 
-  const Carousel({this.items});
+  Carousel({this.items, this.pageController, this.currentPage});
 
   @override
   Widget build(BuildContext context) {
@@ -14,18 +16,22 @@ class Carousel extends StatelessWidget {
       child: PageView.builder(
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
-        controller: PageController(
-          viewportFraction: 0.6,
-          initialPage: 0,
-        ),
+        controller: this.pageController,
         reverse: false,
         itemCount: 10,
         onPageChanged: (index) {
           print(index);
         },
         itemBuilder: (_, index) {
-          return Container(
-            // color: index % 2 == 0 ? Colors.green : Colors.lime,
+          bool pageActive = this.currentPage == index ? true : false;
+
+          return AnimatedContainer(
+            duration: Duration(milliseconds: 300),
+            curve: Curves.easeInOut,
+            margin: EdgeInsets.only(
+              top: pageActive ? 0 : 30,
+              bottom: pageActive ? 0 : 30,
+            ),
             child: Stack(
               alignment: AlignmentDirectional.bottomStart,
               overflow: Overflow.clip,
@@ -41,8 +47,8 @@ class Carousel extends StatelessWidget {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black12,
-                          blurRadius: 3,
-                          offset: Offset(0, 5),
+                          blurRadius: pageActive ? 3 : 0,
+                          offset: pageActive ? Offset(0, 5) : Offset(0, 0),
                         ),
                       ],
                       image: DecorationImage(

@@ -5,7 +5,7 @@ class CustomList extends StatelessWidget {
   final String title;
   final String subtitle;
 
-  const CustomList({this.title, this.subtitle});
+  CustomList({this.title, this.subtitle});
 
   @override
   Widget build(BuildContext context) {
